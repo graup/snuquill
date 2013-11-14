@@ -103,7 +103,8 @@ article h2 {
 }
 article .section,
 article .author,
-a.link-article {
+a.link-article,
+article p.wp-caption-text {
 	font-family:'sourcesans-600', sans-serif;
 }
 .link-issue-title strong {
@@ -198,6 +199,9 @@ body{
 	max-width: 800px;
 	padding: 0;
 }
+.homepage-post {
+	margin-top: 15px;
+}
 
 .logo {
 	display: block;
@@ -285,6 +289,11 @@ body{
 body.home {
 	border-top: 4px solid #f04a24;
 	border-bottom: 4px solid #f04a24;
+}
+@media screen and (max-width: 640px) {
+	body {
+		border-top: 4px solid #f04a24;
+	}
 }
 
 /*------------------------------------*\
@@ -406,13 +415,35 @@ ul.nav-issue-articles,
 	$IMAGES
 \*------------------------------------*/
 
+.alignright {
+	float: right;
+	margin: 0 0 30px 30px;
+}
 .alignleft {
 	float: left;
 	margin: 0 30px 30px 0;
 }
+.aligncenter {
+	margin: 0 auto;
+	display: block;
+}
 
 article {
 	overflow: auto;
+}
+.wp-caption > a,
+.wp-caption > a > img {
+	display: block;
+}
+.wp-caption {
+	background-color: #f0f0f0;
+}
+.wp-caption > a {
+	padding: 5px 5px 0 5px;
+}
+article p.wp-caption-text {
+	padding: 3px 6px;
+	margin: 0;
 }
 
 /*------------------------------------*\
@@ -508,7 +539,9 @@ article {
     font-style: normal;
 }
 
-
+article p.wp-caption-text {
+	font-size: 12px;
+}
 /*--- HEADINGS ---*/
 h1,.alpha{
 	font-size:2em;			/* 32px */
