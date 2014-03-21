@@ -10,6 +10,7 @@
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
@@ -22,16 +23,7 @@
 
 <body class="wrap <?php echo substr(basename( get_page_template() ), 0, -4); ?>">
 
-	<?php
-		if ( basename( get_page_template() ) == 'home.php'):
-	?>
-	<section class="main main-home">
-
-	<?php
-		else:
-	?>
 	<section class="main">
 		<header>
 			<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="The SNU Quill - The Seoul National University English-Language Journal"></a>
 		</header>
-	<?php endif; ?>

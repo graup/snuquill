@@ -40,5 +40,4 @@
 		
 		<br style="clear:both;">
 
-		<?php get_sidebar( 'responsive' ); ?>
 <?php get_footer(); ?>

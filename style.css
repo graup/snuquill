@@ -147,6 +147,17 @@ form .message,
 	font-size:0.75rem;
 }
 
+/* icons */
+.link-issue-title {
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 
 /*------------------------------------*\
 	$MAIN
@@ -194,11 +205,7 @@ body{
 	padding: 0 90px 60px 80px;
 
 }
-.main-home {
-	margin: 0 auto;
-	max-width: 800px;
-	padding: 0;
-}
+
 .homepage-post {
 	margin-top: 15px;
 }
@@ -352,6 +359,10 @@ a.link-issue-title {
 	text-transform: uppercase;
 	margin-right: 3px;
 }
+.link-issue-title:before {
+	content: "\f02d";
+	margin-right: 5px;
+}
 a.link-article {
 	padding-left: 40px;
 }
@@ -359,7 +370,7 @@ a.link-article {
 .nav-issues a.active {
 	position: relative
 }
-.nav-issues a.active:before {
+.nav-issues a.active:after {
 	content:"";
 	font-size: 6px;
 	position: absolute;
@@ -373,7 +384,7 @@ a.link-article {
 		background-color: rgba(255,255,255,0.8);
 		color: #c43e15;
 	}
-	.nav-issues a.active:before {
+	.nav-issues a.active:after {
 		display: none;
 	}
 }
