@@ -300,6 +300,13 @@ body.home {
 	}
 }
 
+.site-footer {
+	text-align: center;
+	font-size: 90%;
+}
+.site-footer p {
+	margin: 0;
+}
 /*------------------------------------*\
 	$NAV
 \*------------------------------------*/
