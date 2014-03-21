@@ -4,27 +4,24 @@ Theme Name: SNU Quill 2013
 Theme URI: http://snuquill.com/
 Description: SNU Quill theme Fall 2013
 Author: Paul Grau
-Author URI: http://pgrau.de
+Author URI: http://graycoding.com
 Version: 1.0
-Tags: 
+Tags: magazine
 
 License: Copyright 2013
 */
 
 /*------------------------------------*\
-	CREDITS
+	$CREDITS
 \*------------------------------------*/
 /*
-Some of this borrowed from INUIT.CSS by Harry Roberts (csswizardry.com).
+Some of this is borrowed from INUIT.CSS by Harry Roberts (csswizardry.com).
 This guy rocks!
 */
 
 /*------------------------------------*\
 	$RESET
 \*------------------------------------*/
-/*
-A more considered reset; more of a restart... csswizardry.com/2011/10/reset-restarted
-*/
 html,body,div,span,applet,object,iframe,
 h1,h2,h3,h4,h5,h6,p,blockquote,pre,hr,
 a,abbr,address,cite,code,
