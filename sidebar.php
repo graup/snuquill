@@ -1,6 +1,8 @@
-			
 	<section class="sidebar">
-		<?php wp_nav_menu( array( 'menu_class'=>'nav nav-meta', 'sort_column' => 'menu_order', 'theme_location' => 'header-menu' ) ); ?> 
+		<?php
+		// Top navigation
+		wp_nav_menu( array( 'menu_class'=>'nav nav-meta', 'sort_column' => 'menu_order', 'theme_location' => 'header-menu' ) );
+		?> 
 
 		<ul class="nav nav-issues">
 
@@ -11,6 +13,7 @@
 				else
 					$current_issue = get_post_meta($post->ID, 'simplemag_issue', true);
 
+				// Issues menu
 				$issues_query = new WP_Query( 'post_type=simplemag-issue' );
 				while ($issues_query->have_posts()) {
 					$issues_query->next_post();
@@ -22,30 +25,36 @@
 					     get_the_time('F Y', $issues_query->post->ID) .
 					     '</a>';
 					
+					// If issue is active, show articles as sub-menu
 					if ($issues_query->post->ID == $current_issue) {
-						echo '<ul class="nav nav-issue-articles">';
+						
 						$q = 'post_type=simplemag-article' .
 						     '&order=ASC&orderby=menu_order' .
 						     '&meta_key=simplemag_issue&meta_value='.$current_issue .
 						     '&nopaging=1';
 						$article_query = new WP_Query( $q );
 						
-						$last_cat = false;
-						while ($article_query->have_posts()) {
-							$article_query->next_post();
+						if ($article_query->have_posts()) {
+							echo '<ul class="nav nav-issue-articles">';
 
-							$cat = get_one_category($article_query->post->ID);
-							if ($cat != $last_cat) {
-								echo '<li><a href="#" class="link-section">' . $cat->name .'</a></li>';
-								$last_cat = $cat;
+							$last_cat = false;
+							while ($article_query->have_posts()) {
+								$article_query->next_post();
+
+								// Section dividers
+								$cat = get_one_category($article_query->post->ID);
+								if ($cat != $last_cat) {
+									echo '<li><a href="#" class="link-section">' . $cat->name .'</a></li>';
+									$last_cat = $cat;
+								}
+
+								$class = "link-article";
+								if ($article_query->post->ID == $post->ID)
+									$class .= " active";
+								echo '<li><a class="'.$class.'"" href="' . get_permalink($article_query->post->ID) . '">'. get_the_title( $article_query->post->ID ) . '</a></li>';
 							}
-
-							$class = "link-article";
-							if ($article_query->post->ID == $post->ID)
-								$class .= " active";
-							echo '<li><a class="'.$class.'"" href="' . get_permalink($article_query->post->ID) . '">'. get_the_title( $article_query->post->ID ) . '</a></li>';
+							echo '</ul>';
 						}
-						echo '</ul>';
 					}
 
 					echo '</li>';
@@ -54,6 +63,5 @@
 
 			<!--<li>Search <?php get_search_form(); ?></li>-->
 		</ul>
-
 
 	</section>
