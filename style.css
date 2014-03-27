@@ -647,6 +647,19 @@ article h2 {
 	}
 }
 
+.issue-date {
+	font-size: 0.45em;
+	background-color: #f4f4f4;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding: 3px 8px;
+	position: relative;
+	top: -0.4em;
+	margin-left: .6em;
+	color: #333;
+}
+
 /*--- FIGURES ---*/
 figure img{
 	display:block;

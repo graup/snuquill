@@ -5,7 +5,10 @@
 		<article class="single post" id="post-<?php the_ID(); ?>" role="article">
 			
 			<header class="posthead">
-				<h1 class="article-title"><?php the_title(); ?></h1>
+				<h1 class="article-title">
+					<?php the_title(); ?>
+					<span class="issue-date"><?php the_time('F Y'); ?></span>
+				</h1>
 				<div class="intro"><?php the_excerpt(); ?></div>
 			</header>
 
