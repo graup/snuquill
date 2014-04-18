@@ -289,11 +289,6 @@ body{
 	}
 }
 
-
-body.home {
-	border-top: 4px solid #f04a24;
-	border-bottom: 4px solid #f04a24;
-}
 @media screen and (max-width: 640px) {
 	body {
 		border-top: 4px solid #f04a24;
