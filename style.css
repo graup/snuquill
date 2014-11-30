@@ -174,7 +174,6 @@ html{
 }
 body{
 	min-height:100%;
-	position: relative;
 }
 
 .header {
@@ -218,7 +217,12 @@ body{
 	font-size: .9em;
 }
 
-
+@media screen and (max-width: 640px) {
+	.subheader .issue-info {
+		display:block;
+		margin-bottom: 1em;
+	}
+}
 
 
 
@@ -336,18 +340,14 @@ body{
 }
 
 @media screen and (max-width: 640px) {
-	.logo img {
-		display: none;
+	.header nav {
+		float: none;
 	}
-	.logo {
-		width: 276px;
-		height: 100px;
-		background: url(img/logo-mobile.png) 0 20px no-repeat;
+	nav ul {
+		margin: 0;
 	}
 	.main {
 		margin: 0;
-		padding-left: 6%;
-		padding-right: 6%;
 	}
 }
 .issue-articles {
@@ -379,12 +379,6 @@ body{
 	}
 	.section-title {
 		text-align: center;
-	}
-}
-
-@media screen and (max-width: 640px) {
-	body {
-		border-top: 4px solid #f04a24;
 	}
 }
 

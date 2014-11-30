@@ -24,7 +24,12 @@ Template Name: Homepage
 <script>
 $(function(){
 	var height = $(window).height() - 150,
-		width = height * (360/500);
+		width = height * (2/2.72),
+		max_width = $(window).width() * 0.8;
+	if (width >= max_width) {
+		width = max_width;
+		height = width * (3.2/2);
+	}
 	$(".big-issue-list").css({'height': height});
 	$(".big-issue-list li").css({'width': width});
 	$('.big-issue-list li').click(function(){
