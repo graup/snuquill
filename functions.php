@@ -31,6 +31,11 @@ if(function_exists('register_sidebar')) {
 	));
 }
 
+if ( function_exists( 'add_theme_support' ) ) { 
+	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'full-reduced', 1000, 9999 );
+}
+
 /**
  * Customize the 'Read More' link text
  *
@@ -56,6 +61,7 @@ function remove_more_jump($link) {
 	return $link;
 }
 add_filter('the_content_more_link', 'remove_more_jump');
+
 
 
 function get_one_category($post_id) {

@@ -23,7 +23,29 @@
 
 <body class="wrap <?php echo substr(basename( get_page_template() ), 0, -4); ?>">
 
-	<section class="main">
-		<header>
-			<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="The SNU Quill - The Seoul National University English-Language Journal"></a>
-		</header>
+	<header class="header">
+		<nav>
+			<?php
+				// Top navigation
+				wp_nav_menu( array( 'menu_class'=>'nav nav-meta', 'sort_column' => 'menu_order', 'theme_location' => 'header-menu' ) );
+			?> 	
+		</nav>
+		<h1>
+			<a href="<?php echo home_url(); ?>" class="logo">
+				<span>The SNU Quill</span>
+				Seoul Nat'l University English-Language Journal
+			</a>
+		</h1>
+	</header>
+
+	<section class="subheader">
+		<p class="issue-info">
+			Read the complete issue online or grab your own copy at multiple locations on campus!
+		</p>
+		<strong>
+			<?php if (is_home()): ?>Latest issues
+			<?php else: ?>Read issue
+			<?php endif; ?>
+		</strong>
+	</section>
+

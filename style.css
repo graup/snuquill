@@ -49,7 +49,7 @@ table{
 	border-spacing:0;
 }
 strong,b,mark{
-	font-weight:bold;
+	font-weight:normal;
 	font-style:inherit;
 }
 em,i,cite,q,address,dfn,var{
@@ -101,7 +101,9 @@ article h2 {
 article .section,
 article .author,
 a.link-article,
-article p.wp-caption-text {
+article p.wp-caption-text,
+.subheader strong,
+article strong {
 	font-family:'sourcesans-600', sans-serif;
 }
 .link-issue-title strong {
@@ -117,7 +119,8 @@ article p.wp-caption-text {
 }
 h1,h2,h3,h4,h5,h6,
 ul,ol,dl,p,address,figure,pre,fieldset,table,hr,
-.nav,.island,.media,.fields > li{
+.nav,.island,.media,.fields > li,
+.posthead{
 	margin-bottom:24px;
 	margin-bottom:1.5rem;
 }
@@ -174,54 +177,147 @@ body{
 	position: relative;
 }
 
-.sidebar {
+.header {
 	background-color: #c43e15;
-	position: absolute;
-	top: 0; bottom: 0;
-	width: 300px;
+	color: #fff;
+	padding: 17px 20px;
+}
+.header a {
+	color: inherit;
+}
+.header h1 a:hover {
+	text-decoration: none
+}
+.header h1 {
+	font-size: 1em;
+	font-family: 'sourcesans-600', sans-serif;
+	font-weight: normal;
+	margin: 0;
+	line-height: 1.2;
+}
+.header h1 span {
+	display: block;
+	font-weight: normal;
+	font-family: 'sourcesans-700', sans-serif;
+	font-size: 2em;
+}
+.header nav {
+	float: right;
+}
+.subheader {
+	background-color: #323232;
+	color: #fff;
+	padding: 10px 20px;
+	font-size: .9em;
+	line-height: 16px;
+}
+.subheader .issue-info {
+	margin: 0;
+	float: right;
+	color: #B6B6B6;
+	font-size: .9em;
+}
 
-	font-size: 87.5%;
-}
-.sidebar.autohide {
-	margin-left: -270px;
-	-webkit-transition: margin .6s;
-	-moz-transition: margin .6s;
-	-ms-transition: margin .6s;
-	transition: margin .6s;
-}
-.sidebar.autohide:hover {
-	margin-left: 0;
-}
-.nav-issues {
-	padding: 85px 0 50px;
-}
 
-.main {
-	/*margin-left: 300px;*/
-	margin-left: 300px;
-	padding: 0 90px 60px 80px;
 
-}
+
 
 .homepage-post {
 	margin-top: 15px;
 }
 
-.logo {
-	display: block;
-	padding: 15px 0;
+.big-issue-list {
+	height: 500px;
+	white-space: nowrap;
+	overflow-x:auto;
+	-webkit-overflow-scrolling: touch;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	font-size: 0;
 }
-.logo img {
-	max-width: none;
+.big-issue-list li {
+	display: inline-block;
+	height: 100%;
+	width: 40%;
+	min-width: 300px;
+	background: transparent 0 0 no-repeat;
+	background-size: 100% auto;
+	position: relative;
+	cursor: pointer;
+}
+.big-issue-list h2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+.big-issue-list a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	text-align: center;
+	color: inherit;
+	padding-top: 55%;
+	box-sizing: border-box;
+}
+.big-issue-list a span {
+	padding: 10px 20px;
+	font-size: 18px;
+	background: rgba(0,0,0,0.7);
+	color: #fff;
+	display: none;
+}
+.big-issue-list li:hover span {
+	display: inline-block;
+}
+.big-issue-list li:hover h2 {
+	background-color: rgba(255,255,255,.1);
+}
+
+.main {
+	overflow: hidden;
+}
+.sidebar {
+	background-color: #c43e15;
+	width: 300px;
+	float: left;
+	position: relative;
+
+	font-size: 87.5%;
+}
+.content {
+	margin: 30px 30px 60px;
+	margin-left: 350px;
+}
+.nav-issues {
+	padding: 50px 0;
+}
+.sidebar:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 0; height: 0;
+	border: 3px solid #fff;
+	border-color: transparent #fff #fff transparent;
+}
+.post.single.article {
+	margin-right: 350px;
 }
 
 @media screen and (max-width: 990px) {
 	.sidebar { 
 		width: 270px;
 	}
-	.main {
-		margin-left: 270px;
-		padding-left: 50px;
+	.content {
+		margin-left: 290px;
 	}
 }
 
@@ -230,11 +326,8 @@ body{
 		position: static;
 		width: 100%;
 	}
-	.main {
-		margin: 0;
-		padding-left: 100px;
-		padding-right: 100px;
-		padding-bottom: 10px;
+	.content {
+		margin: 20px;
 	}
 
 	.nav-issues {
@@ -296,12 +389,30 @@ body{
 }
 
 .site-footer {
-	text-align: center;
+	text-align: right;
 	font-size: 90%;
+	background-color: #323232;
+	padding: 200px 20px 20px;
+	color: #BABABA;
 }
 .site-footer p {
 	margin: 0;
 }
+.site-footer a {
+	color: inherit;
+}
+
+.post .cover {
+	float: right;
+	width: 400px;
+	max-width: 40%;
+	margin: -30px -30px 30px 30px;
+}
+.post .cover img {
+	width: 100%;
+	height: auto;
+}
+
 /*------------------------------------*\
 	$NAV
 \*------------------------------------*/
@@ -325,18 +436,16 @@ Create an abstraction, as per: csswizardry.com/2011/09/the-nav-abstraction/
 .sidebar ul {
 	margin: 0;
 }
-.nav-meta,
+
 .nav-issues a {
 	padding: 7px 30px;
 }
 
 
-.nav-meta {
-	padding-top: 15px;
-}
 .nav-meta a {
-	color: rgba(0,0,0,0.7);
-	margin-right: 10px;
+	color: #1D1D1D;
+	margin-left: 13px;
+	font-size: .9em;
 }
 
 .nav-issues a {
@@ -438,9 +547,7 @@ ul.nav-issue-articles,
 	display: block;
 }
 
-article {
-	overflow: auto;
-}
+
 .wp-caption > a,
 .wp-caption > a > img {
 	display: block;
@@ -584,14 +691,7 @@ h6,.zeta{
 	font-size: 1.0625em;
 	line-height: 1.85;
 }
-.post-content p,
-article footer p {
-	max-width: 600px;
-}
-article header {
-	margin: 0 0 30px 0;
-	max-width: 600px;
-}
+
 article header p {
 	margin: 0;
 }
@@ -602,6 +702,9 @@ article header .article-title {
 	font-weight: normal;
 	color: #111;
 }
+article.article header .article-title {
+		text-align: center;
+}
 article .intro {
 	color: #222;
 	font-size: 1.4em;
@@ -611,9 +714,11 @@ article .intro {
 article .intro p + p {
 	margin-top: .6em;
 }
+.single.article .intro {
+	text-align: center;
+}
 article .section,
 article .author {
-	max-width: 600px;
 	font-size: 75%;
 	text-transform: uppercase;
 	color: #444;

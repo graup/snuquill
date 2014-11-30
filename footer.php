@@ -1,6 +1,9 @@
 
 	<footer class='site-footer'>
-		<p>&copy; SNU Quill, <?php echo date("Y"); ?>. <a href="https://github.com/graup/snuquill">Code on Github</a>.</p>
+		<p>
+            &copy; SNU Quill, <?php echo date("Y"); ?><br>
+            <a href="https://github.com/graup/snuquill">Code on Github</a>
+        </p>
 	</footer>
 	<?php
     /* Always have wp_footer() just before the closing </body>

@@ -1,9 +1,4 @@
 	<section class="sidebar">
-		<?php
-		// Top navigation
-		wp_nav_menu( array( 'menu_class'=>'nav nav-meta', 'sort_column' => 'menu_order', 'theme_location' => 'header-menu' ) );
-		?> 
-
 		<ul class="nav nav-issues">
 
 			<?php
