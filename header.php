@@ -7,6 +7,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, maximum-scale=1.0">
+	<?php if (is_home()): ?>
+	<meta name="description" content="The SNU Quill is the English-language students’ magazine at Seoul National University. Access all issues online!">
+	<?php endif; ?>
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
@@ -44,6 +47,7 @@
 		</p>
 		<strong>
 			<?php if (is_home()): ?>Latest issues
+			<?php elseif (is_archive()): ?>Archive
 			<?php else: ?>Read issue
 			<?php endif; ?>
 		</strong>

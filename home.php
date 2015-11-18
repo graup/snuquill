@@ -7,19 +7,22 @@ Template Name: Homepage
 
 <section class="main">
 
-	<ul class="big-issue-list">
-	<?php
-		$issues_query = new WP_Query( 'post_type=simplemag-issue&post_count=5' );
-		while ($issues_query->have_posts()):
-			$issues_query->the_post();
+	<div class="issue-list-container">
 
-			get_the_post_thumbnail('full-reduced');
-			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full-reduced');
-		?><li class="issue" style="background-image:url(<?php echo $thumb[0]; ?>)"><h2><a href="<?php the_permalink(); ?>">
-		<span><?php the_title(); ?></span></a></h2>
-		</li><?php endwhile; ?>
-	</ul>
+		<ul class="big-issue-list">
+		<?php
+			$issues_query = new WP_Query( 'post_type=simplemag-issue&posts_per_page=5' );
+			while ($issues_query->have_posts()):
+				$issues_query->the_post();
 
+				get_the_post_thumbnail('full-reduced');
+				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full-reduced');
+			?><li class="issue" style="background-image:url(<?php echo $thumb[0]; ?>)"><h2><a href="<?php the_permalink(); ?>">
+			<span><?php the_title(); ?></span></a></h2>
+			</li><?php endwhile; ?>
+		</ul>
+	</div>
+	
 </section>
 <script>
 $(function(){

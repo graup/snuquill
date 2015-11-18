@@ -9,8 +9,10 @@
 					$current_issue = get_post_meta($post->ID, 'simplemag_issue', true);
 
 				// Issues menu
-				$issues_query = new WP_Query( 'post_type=simplemag-issue' );
+				$issues_query = new WP_Query( 'post_type=simplemag-issue&posts_per_page=5' );
+				$count = 5;
 				while ($issues_query->have_posts()) {
+					if ($count-- === 0) break;
 					$issues_query->next_post();
 					$class = "link-issue-title";
 					if ($issues_query->post->ID == $post->ID)
@@ -56,7 +58,7 @@
 				}
 			?>
 
-			<!--<li>Search <?php get_search_form(); ?></li>-->
+			<li><a href="<?php echo get_post_type_archive_link('simplemag-issue'); ?>">Archive</a></li>
 		</ul>
 
 	</section>
