@@ -26,7 +26,7 @@
 
 <body class="wrap <?php echo substr(basename( get_page_template() ), 0, -4); ?>">
 
-	<header class="header">
+	<header class="header <?php echo (is_home()?'home':''); ?>">
 		<nav>
 			<?php
 				// Top navigation
@@ -35,21 +35,10 @@
 		</nav>
 		<h1>
 			<a href="<?php echo home_url(); ?>" class="logo">
-				<span>The SNU Quill</span>
-				Seoul Nat'l University English-Language Journal
+				<?php if (!is_home()) { ?>
+				<img src="<?php echo get_template_directory_uri(); ?>/img/logo_text.png" class="logo-text">
+				<?php } ?>
 			</a>
 		</h1>
 	</header>
-
-	<section class="subheader">
-		<p class="issue-info">
-			Read the complete issue online or grab your own copy at multiple locations on campus!
-		</p>
-		<strong>
-			<?php if (is_home()): ?>Latest issues
-			<?php elseif (is_archive()): ?>Archive
-			<?php else: ?>Read issue
-			<?php endif; ?>
-		</strong>
-	</section>
 

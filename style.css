@@ -177,7 +177,7 @@ body{
 }
 
 .header {
-	background-color: #c43e15;
+	background-color: #FA3D1E;
 	color: #fff;
 	padding: 17px 20px;
 }
@@ -204,26 +204,40 @@ body{
 	float: right;
 }
 .subheader {
-	background-color: #323232;
-	color: #fff;
-	padding: 10px 20px;
+	background-color: #efefef;
+	color: #FA3D1E;
+	padding: 12px 12px 12px 50px;
 	font-size: .9em;
-	line-height: 16px;
+	line-height: 1;
 }
 .subheader .issue-info {
 	margin: 0;
 	float: right;
-	color: #B6B6B6;
+	color: #888;
 	font-size: .9em;
 }
 
 @media screen and (max-width: 640px) {
+	.subheader {
+		padding-left: 20px;
+	}
 	.subheader .issue-info {
 		display:block;
 		margin-bottom: 1em;
 	}
 }
 
+.logo-text {
+	width: 200px;
+	padding: 10px 30px;
+	border: 2px solid #fff;
+}
+
+.header.home {
+	background: #FA3D1E url(img/logo_new.png) 50% 50% no-repeat;
+	background-size: auto 140px;
+	height: 140px;
+}
 
 
 .homepage-post {
@@ -325,7 +339,7 @@ body{
 	overflow: hidden;
 }
 .sidebar {
-	background-color: #c43e15;
+	background-color: #FA3D1E;
 	width: 300px;
 	float: left;
 	position: relative;
@@ -333,8 +347,10 @@ body{
 	font-size: 87.5%;
 }
 .content {
-	margin: 30px 30px 60px;
-	margin-left: 350px;
+	margin: 0 0 60px 300px;
+}
+.post {
+	padding: 30px 30px 0 50px;
 }
 .nav-issues {
 	padding: 50px 0;
@@ -421,9 +437,9 @@ body{
 .site-footer {
 	text-align: right;
 	font-size: 90%;
-	background-color: #323232;
+	background-color: #efefef;
 	padding: 200px 20px 20px;
-	color: #BABABA;
+	color: #888;
 }
 .site-footer p {
 	margin: 0;

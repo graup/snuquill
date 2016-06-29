@@ -6,6 +6,13 @@
 
 		<section class="content">
 
+			<section class="subheader">
+				<p class="issue-info">
+					Read the complete issue online or grab your own copy at multiple locations on campus!
+				</p>
+				<strong>Read issue</strong>
+			</section>
+
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 			<article class="single post" id="post-<?php the_ID(); ?>" role="article">
